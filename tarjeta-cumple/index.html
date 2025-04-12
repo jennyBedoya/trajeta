@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños, Mi Saiyajin Favorito</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d5dbdb, #06adf0);
+      font-family: 'Comic Sans MS', 'Arial', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 360px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+      animation: zoomIn 1.2s ease-out;
+    }
+
+    .card-header {
+      background: #33deff;
+      padding: 20px;
+      position: relative;
+    }
+
+    .goku-chi-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+    }
+
+    
+
+    .goku {
+      left: 0;
+      animation-delay: 0s;
+    }
+
+    .chi-chi {
+      right: 0;
+      animation-delay: 1.5s;
+    }
+
+    .card-body {
+      padding: 25px;
+      background: url('./foto.jpg') no-repeat center center;
+      background-size: cover;
+      position: relative;
+    }
+
+    .card-body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 245, 230, 0.85);
+      z-index: 1;
+    }
+
+    h1, p, .heart {
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 1.9em;
+      color: #d81b60;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      font-size: 1.1em;
+      color: #333;
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+
+    .heart {
+      color: #e91e63;
+      font-size: 1.3em;
+      animation: pulse 1.8s infinite;
+    }
+
+    .kamehameha {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #03a9f4;
+      opacity: 0.9;
+      animation: shoot 2s linear infinite;
+      border-radius: 50%;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes shoot {
+      0% {
+        transform: translateY(-100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 400px) {
+      h1 {
+        font-size: 1.6em;
+      }
+      p {
+        font-size: 0.95em;
+      }
+      .goku, .chi-chi {
+        width: 60px;
+        height: 60px;
+      }
+      .goku-chi-container {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      
+    </div>
+    <div class="card-body">
+      <h1>¡Feliz Cumple, Mi Amor! <span class="heart">💖</span></h1>
+      <p>Amor, hoy el universo brilla más porque es tu día especial. Eres mi vida, siempre fuerte y con un corazón gigante que me hace suspirar.</p>
+      <p>Que este cumpleaños sea uno mas a tu lado, lleno de aventuras, risas y nuestro amor eterno. ¡Te amo más que a nada en el mundo! <span class="heart">💞</span></p>
+    </div>
+  </div>
+
+  <script>
+    function createKamehameha() {
+      const kame = document.createElement('div');
+      kame.className = 'kamehameha';
+      kame.style.left = Math.random() * 100 + 'vw';
+      kame.style.background = ['#03a9f4', '#ffeb3b', '#ff5722', '#e91e63'][Math.floor(Math.random() * 4)];
+      kame.style.animationDelay = Math.random() * 3 + 's';
+      document.body.appendChild(kame);
+      setTimeout(() => kame.remove(), 2000);
+    }
+
+
+
+    
+    const gokuImg = new Image();
+    gokuImg.src = "./foto.jpg";
+    const chiChiImg = new Image();
+    chiChiImg.src = "./foto.jpg";
+    const bgImg = new Image();
+    bgImg.src = "./foto.jpg";
+  </script>
+</body>
+</html>
